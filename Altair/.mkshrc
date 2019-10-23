@@ -1,0 +1,43 @@
+#PS1
+HOST=`hostname`
+export PS1='${USER}@${HOST%%.*} $ ' 
+
+#history
+HISTSIZE=5000
+HISTEDIT=$EDITOR
+HISTFILE=~/.mkshhist
+
+#config
+export VISUAL="vim"
+export EDITOR="$VISUAL"
+set -o emacs 
+
+##alias
+
+#xbps
+alias xi="sudo xbps-install -Suv"
+alias xq="xbps-query -Rs"
+alias xr="sudo xbps-remove"
+
+#runit
+alias reboot="sudo reboot"
+alias poweroff="sudo poweroff"
+
+#gnutls
+alias l="ls -lah --color=auto"
+alias mv="mv -v"
+alias cp="cp -Rv"
+alias mkdir='mkdir -pv'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias mountl='mount | column -t'
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias tarc="tar czvf"
+alias tarx="tar xzvf"
+
+#neofetch
+alias tinyfetch="neofetch --ascii_colors 1 7 --colors 1 16 16 1 7 7 --color_blocks --package_managers tiny --speed_shorthand on --gtk2 off --gtk3 off --ascii_distro void_small"
+alias normalfetch="neofetch --ascii_colors 1 7 --colors 1 16 16 1 7 7 --color_blocks --package_managers tiny --speed_shorthand on --gtk2 off --gtk3 off"
