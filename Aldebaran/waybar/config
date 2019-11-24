@@ -1,0 +1,129 @@
+[{
+    "layer": "top", 
+        "output": "DP-1",
+    "position": "bottom", 
+    "height": 22,     // Choose the order of the modules
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": [ "network","custom/cmus", "pulseaudio", "network", "cpu", "memory", "temperature#TDie", "temperature#GPU", "clock", "tray"],
+    "margin":0,
+
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+
+    "sway/window": {
+        "format": "{}",
+        "tooltip": false
+    },
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+    "clock": {
+        "tooltip-format": "{:%Y-%m-%d | %H:%M:%S}",
+        "format": "{:%Y-%m-%d | %H:%M:%S}",
+        "tooltip":false,
+        "interval": 1
+    },
+
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false,
+        "interval": "1"
+    },
+
+    "memory": {
+        "format": "{used:0.1f}GiB/{total:0.1f}GiB ",
+        "interval": "1",
+        "tooltip": false
+    },
+
+    "temperature#TDie": {
+        // "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+        "critical-threshold": 70,
+        "tooltip": false,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "CPU:{temperatureC}°C",
+        "format-icons": ["", "", ""],
+        "interval": 1
+    },    
+
+    "temperature#GPU": {
+        // "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
+        "critical-threshold": 80,
+        "tooltip": false,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "GPU:{temperatureC}°C",
+        "format-icons": ["", "", ""],
+        "interval": 1
+    },
+
+    "network": {
+        "interface": "enp3s0", // (Optional) To force the use of this interface
+        "format": "{ifname}",
+        "format-disconnected": "Disconnected ⚠",
+        "interval": 60
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5, // %, can be a float
+        "format": "{volume}%", //TODO, display \u1F3A7
+        "format-muted": " {format_source}",
+        "tooltip":false
+    },
+
+    "custom/cmus": {
+        "format": "♪ | {}",
+        "interval": 1,
+        "exec": "mksh ~/.config/waybar/cmus.sh", // artist - title
+        "on-click": "cmus-remote -u",
+        "escape": true //handle markup entities
+    },
+
+    "custom/vpn": {
+	"format": "VPN: {}",
+	"exec": "mksh /home/ik4ms/vpn/upscript.sh",
+	"interval": 10
+    }
+
+},
+
+{
+    "layer": "top", 
+        "output": ["DP-2"],
+    "position": "bottom", 
+    "height": 22, 
+    // Choose the order of the modules
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["custom/vpn","clock"],
+
+
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },    
+
+    "clock": {
+        "tooltip-format": "{:%Y-%m-%d | %H:%M",
+        "format": "{:%H:%M}",
+        "tooltip":false,
+        "interval": 60
+    },
+
+        "sway/window": {
+        "format": "{}",
+        "tooltip": false
+    },
+
+    "custom/vpn": {
+    "format": "VPN- {}",
+    "exec": "mksh /home/ik4ms/vpn/upscript.sh",
+    "interval": 10
+    }
+
+}]
