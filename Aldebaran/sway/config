@@ -88,6 +88,7 @@ input * accel_profile flat
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
+    
 #
 ## Workspaces:
 #
