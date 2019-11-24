@@ -1,0 +1,133 @@
+* {
+    border: none;
+    border-radius: 0;
+    /*font-family: Roboto, Helvetica, Arial, sans-serif;*/
+    font-family:"Source Sans Pro", sans-serif;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(0,0,0,0.819);
+    border-bottom: 1px solid rgba(0,0,0,0.819);
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+#workspaces button {
+    padding: 0 3px;
+    background-color: transparent;
+    color: #ffffff;
+    border-bottom: 1px solid transparent;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inherit;
+    text-shadow: inherit;
+    border-bottom: 3px solid #4f416d;
+}
+
+#workspaces button.focused {
+    background-color: rgba(51,31,91,0.701);
+    border-bottom: 3px solid rgba(79,65,109,0.819);
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode {
+    background-color: #64727D;
+    border-bottom: 3px solid #ffffff;
+}
+
+#clock,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode{
+    padding: 0 8px;
+    margin: 0 5px;
+    color: #ffffff;
+}
+
+#clock {
+    background-color: transparent;
+    border-bottom: 3px solid rgba(79,65,109,0.819);
+}
+
+#cpu {
+    background-color: transparent;
+    border-bottom: 3px solid rgba(79,65,109,0.819);
+}
+
+#memory {
+    background-color: transparent;
+    border-bottom: 3px solid rgba(79,65,109,0.819);
+}
+
+#network {
+    background-color: transparent;
+    border-bottom: 3px solid rgba(79,65,109,0.819);
+}
+
+#network.disconnected {
+    background-color: transparent;
+    border-bottom: 3px solid rgba(252,94,3,0.819);
+}
+
+#pulseaudio {
+    background-color: transparent;
+    border-bottom: 3px solid rgba(79,65,109,0.819);
+}
+
+#pulseaudio.muted {
+    background-color: transparent;
+    border-bottom: 3px solid rgba(252,190,3,0.819);
+}
+
+#custom-cmus {
+    background-color: transparent;
+    border-bottom: 3px solid rgba(79,65,109,0.819);
+}
+
+#custom-vpn {
+    background-color: transparent;
+    border-bottom: 3px solid rgba(79,65,109,0.819);
+}
+
+#temperature {
+    background-color: transparent;
+    border-bottom: 3px solid rgba(79,65,109,0.819);
+}
+
+#temperature.critical {
+    background-color: transparent;
+    border-bottom: 3px solid rgba(252,94,3,0.819);
+}
+
+#tray {
+    background-color: transparent;
+    border-bottom: 3px solid rgba(79,65,109,0.819);
+}
