@@ -28,6 +28,7 @@ alias l="ls -lah --color=auto"
 alias mv="mv -v"
 alias cp="cp -Rv"
 alias mkdir='mkdir -pv'
+alias rm='rm -Rv'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
