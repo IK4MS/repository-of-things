@@ -12,6 +12,10 @@ export VISUAL="vim"
 export EDITOR="$VISUAL"
 set -o emacs 
 
+#fzf search
+source /usr/share/fzf/key-bindings.mksh
+source /usr/share/fzf/completion.mksh
+
 ##alias
 
 #xbps
