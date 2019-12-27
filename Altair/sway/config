@@ -12,16 +12,7 @@ set $right s
 # Terminal emulator
 set $term alacritty
 # Application launcher
-#set $menu j4-dmenu-desktop --dmenu='dmenu_run -i'  --term='alacritty'
-
-
-
-#set $fzf 'compgen -c | sort -u | fzf --cycle --tiebreak=begin,length,index --layout=reverse --border --color=16 | xargs swaymsg exec'
-
-#set $fzf ''IFS=:; find $PATH -maxdepth 1 -executable -type f -printf '%f\n' | fzf --cycle --tiebreak=begin,length,index --layout=reverse --border --color=16 | xargs swaymsg exec''
-#set $menu alacritty -t "Sway-Menu" -d 40 10 --position 500 250 --no-live-config-reload --command dash -c $fzf
-#
-set $menu alacritty -t "Sway-Menu" -d 40 10 --position 500 250 --no-live-config-reload --command /home/ik4ms/fzf.sh
+set $menu $term -t "Sway-Menu" -d 40 10 --position 500 250 --no-live-config-reload --command /home/ik4ms/fzf.sh
 
 for_window [title="Sway-Menu"] border none, floating enable
 
@@ -32,7 +23,10 @@ for_window [title="Sway-Menu"] border none, floating enable
 # Default wallpaper
 #output * bg /home/ik4ms/__bt_7274_and_jack_cooper_titanfall_2_and_etc_drawn_by_nogchasaeg_karon2848__b38aa225d81912145a554d23f016efde.png fill
 #output * bg /home/ik4ms/Downloads/LedZep_KIRAEX_C2R01.png fill
-output * bg /home/ik4ms/Downloads/aks-voidX-exodus-night-branded.png fill
+#output * bg /home/ik4ms/Downloads/retrowave-ap-1366x768.jpg fill
+#output * bg /home/ik4ms/Downloads/aks-voidX-exodus-night-branded.png fill
+#output * bg /home/ik4ms/__strelizia_darling_in_the_franxx_drawn_by_murasaki_saki__eef42792de5c4cd7ecfc3aff5545b13e.jpg fill
+output * bg /home/ik4ms/__strelizia_darling_in_the_franxx_and_1_more_drawn_by_murasaki_saki__1563c416eb936423176a597b39bdfff7.jpg fill
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 output DVI-I-2 pos 0 0 res 1366x768
@@ -220,15 +214,9 @@ default_border pixel 2
 ## Colors
 #
 
-set $bg 	#E5E2CF
-set $fg 	#151414
-set $br 	#BA4B3D
-set $ia 	#E5E2CF
-set $bgbar 	#E5E2CFDE
-set $brbar 	#BA4B3DD1
-set $fdbar 	#151414B3
-set $fgi 	#BA4B3D
-set $fgdk	#151414
+set $bg #3a3b36
+set $fg #c4c5b5
+set $br $fg
 
 # class                 border  backgr. text    indicator child_border
 client.focused          $br     $br     $fg     $bg       $br
@@ -241,29 +229,13 @@ client.background $bg
 #
 ## Status Bar:
 #
-# Read `man 5 sway-bar` for more information about this section.
 
 bar {
-  status_command i3blocks
-  output DVI-I-2
-  	colors {
-  		background $bgbar
-		focused_workspace  $ia $brbar $fg
-        	active_workspace   $ia $fdbar $fg 
-        	inactive_workspace $ia $fgdk $fgi
-   	}
-  position top
+    swaybar_command waybar
 }
 
 #
 ##Startup "background" apps
 #
-
-#exec swaymsg 'workspace 10; exec /usr/bin/ckb-next'
-#exec swaymsg 'workspace 10; exec /usr/bin/pulseeffects'
-#exec swaymsg 'workspace 10; exec /usr/bin/SVPManager'
-#exec swaymsg 'workspace 4; exec /usr/bin/ripcord'
-#exec swaymsg 'workspace 1; exec /usr/bin/vivaldi-snapshot'
-#exec swaymsg 'workspace 2; exec ~/ripcord.sh'
 
 include /etc/sway/config.d/*
