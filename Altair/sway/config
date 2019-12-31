@@ -195,8 +195,8 @@ bindsym $mod+t mode "resize"
 ## Volume + media
 #
 
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -5%
+bindsym $mod+KP_Add exec pactl set-sink-volume 1 +5%
+bindsym $mod+KP_Subtract exec pactl set-sink-volume 1 -5%
 bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
@@ -219,11 +219,11 @@ set $fg #c4c5b5
 set $br $fg
 
 # class                 border  backgr. text    indicator child_border
-client.focused          $br     $br     $fg     $bg       $br
+client.focused          $br     $br     $bg     $bg       $br
 client.focused_inactive $bg     $bg     $fg     $bg       $bg
 client.unfocused        $bg     $bg     $fg     $bg       $bg
-client.urgent          	$br     $br     $fg     $bg       $br 
-client.placeholder     	$br     $br     $fg     $bg       $br 
+client.urgent          	$br     $br     $bg     $bg       $br 
+client.placeholder     	$br     $br     $bg     $bg       $br 
 client.background $bg
 
 #
